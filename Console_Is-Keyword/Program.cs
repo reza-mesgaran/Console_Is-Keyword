@@ -10,24 +10,30 @@ namespace Console_Is_Keyword
     {
         static void Main(string[] args)
         {
-            //-------------------------- 1st usage of Is-Keyword ---------------------------
-            //int sum = 10 + 10;   
-            double sum = 10.5+10.5; 
-
-            if (sum is int)
-            {
-                Console.WriteLine("Result of sum is an Integer");
-            }
-            else if (sum is double)
-            {
-                Console.WriteLine("Result of sum is a Double");
-
-            }
-            //-------------------------- 1st usage of Is-Keyword ---------------------------
-
+            Sex.Greeting(new Man());       // Create an object of Man'Class
+            Sex.Greeting(new Women());    // Create an object of Woman'Class
             Console.ReadKey();
-
         }
     }
 
+    class Person { }
+    class Man : Person { }
+    class Women : Person { }
+
+    //-------------------------- 2st usage of Is-Keyword ---------------------------
+    class Sex
+    {
+        public static void Greeting(Person personObj)     // using -Is Keyword->  If (obj  is xxx)
+        {
+            if (personObj is Man)
+            {
+                Console.WriteLine("Welcome Mr.");
+            }
+            else if (personObj is Women)
+            {
+                Console.WriteLine("Welcome Mrs.");
+            }
+        }
+
+    }
 }
